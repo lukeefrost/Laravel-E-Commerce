@@ -28,3 +28,7 @@ Route::get('/products', function() {
 });
 
 //Route::get('/shop', 'HomeController@shop');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
