@@ -44,10 +44,10 @@
         <a class="nav-link" href="{{url('/')}}">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url('shop/')}}">Shop</a>
+        <a class="nav-link" href="{{url('/shop')}}">Shop</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link disabled" href="{{url('/contact')}}">Contact Us</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>

@@ -23,6 +23,10 @@ Route::get('/shop', function() {
     return view('front/shop');
 });
 
+Route::get('/contact' function() {
+    return view('front/contact');
+});
+
 Route::get('/products', function() {
     return view('front/shop');
 });
@@ -32,3 +36,5 @@ Route::get('/products', function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('home', 'HomeController@contact')->name('contactus');
