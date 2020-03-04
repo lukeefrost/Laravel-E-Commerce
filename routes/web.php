@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('home', function() {
+    return view('front/home');
+});
+
+Route::get('/shop', function() {
+    return view('front/shop');
+});
+
+Route::get('/products', function() {
+    return view('front/shop');
+});
+
+//Route::get('/shop', 'HomeController@shop');
