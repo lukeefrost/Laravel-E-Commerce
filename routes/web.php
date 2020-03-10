@@ -33,6 +33,8 @@ Route::get('/products', function() {
 
 Route::get('/product_details/{id}', 'HomeController@product_details');
 
+Route::get('/cart', 'CartController@index');
+
 Route::get('/shop', 'HomeController@shop');
 
 //Route::get('/products', function() {
@@ -59,3 +61,5 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth', 'admin']], function() 
 
     Route::resource('product', 'ProductsController');
 });
+
+Route::get('/cart/addItem/{id}', 'HomeController@product_details');
