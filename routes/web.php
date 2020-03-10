@@ -39,8 +39,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('home', 'HomeController@contact')->name('contactus');
 
-Route::group(['prefix' => 'admin', 'middleware'=>['auth', 'admin']],
-  function() {
+Route::group(['prefix' => 'admin', 'middleware'=>['auth', 'admin']], function() {
+  
     Route::get('/', function () {
       return view('admin.index');
     })->name('admin.index');
@@ -49,5 +49,5 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth', 'admin']],
 
     Route::get('/admin', 'AdminController@index');
 
-    Route::resource('product', 'ProductController');
+    Route::resource('product', 'ProductsController');
 });
