@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('dist/css/album.css')}}">
 
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">

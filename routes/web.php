@@ -27,6 +27,8 @@ Route::get('/contact', function() {
     return view('front/contact');
 });
 
+Route::get('/shop', 'HomeController@shop');
+
 //Route::get('/products', function() {
     //return view('front/shop');
 //});
@@ -40,7 +42,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('home', 'HomeController@contact')->name('contactus');
 
 Route::group(['prefix' => 'admin', 'middleware'=>['auth', 'admin']], function() {
-  
+
     Route::get('/', function () {
       return view('admin.index');
     })->name('admin.index');

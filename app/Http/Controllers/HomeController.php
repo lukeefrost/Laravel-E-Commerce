@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,11 +19,13 @@ class HomeController extends Controller
 
     public function shop()
     {
-        return view('front.shop');
+        $products = Product::all();
+        return view('front.shop', compact('products'));
     }
 
     public function contact()
     {
         return view('front.contact');
     }
+
 }
