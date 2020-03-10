@@ -69,3 +69,5 @@ Route::get('/cart/addItem/{id}', 'HomeController@product_details');
 Route::get('cart/addItem/{id}', 'CartController@addItem');
 
 Route::get('/cart/remove/{id}', 'CartController@destroy');
+
+Route::put('/cart/update/{id}', 'CartController@update');
