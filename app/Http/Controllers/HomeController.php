@@ -23,6 +23,12 @@ class HomeController extends Controller
         return view('front.shop', compact('products'));
     }
 
+    public function product_details($id)
+    {
+        $products = Product::findOrFail($id);
+        return view('front.product_details', compact('products'));
+    }
+
     public function contact()
     {
         return view('front.contact');

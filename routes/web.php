@@ -27,9 +27,11 @@ Route::get('/contact', function() {
     return view('front/contact');
 });
 
-Route::get('/products' function() {
+Route::get('/products', function() {
     return view('front.shop');
 });
+
+Route::get('/product_details/{id}', 'HomeController@product_details');
 
 Route::get('/shop', 'HomeController@shop');
 
