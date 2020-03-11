@@ -15,7 +15,7 @@
         </div>
       </div>
     </section>
-    <!-- Checout Forms-->
+    <!-- Checkout Forms-->
  <div class="table-responsive cart_info">
                 <table class="table table-condensed">
                     <thead>
@@ -84,7 +84,7 @@
 
 
 
-    <?php  // form start here ?>
+    <?php  // form starts here ?>
     <section class="checkout">
       <div class="container">
         <div class="row">
@@ -117,9 +117,9 @@
                     </div>
 
                      <div class="form-group col-md-6">
-                      <label for="lastname" class="form-label">State Name</label>
+                      <label for="state" class="form-label">State Name</label>
 
-                      <input id="lastname" type="text" name="state" placeholder="State Name" value="{{ old('state') }}" class="form-control">
+                      <input id="state" type="text" name="state" placeholder="State Name" value="{{ old('state') }}" class="form-control">
                       <br>
                       <span style="color:red">{{ $errors->first('state') }}</span>
                     </div>
@@ -128,9 +128,9 @@
 
 
                     <div class="form-group col-md-6">
-                      <label for="lastname" class="form-label">Pincode</label>
+                      <label for="pincode" class="form-label">Pincode</label>
 
-                      <input id="lastname" type="text" name="pincode" placeholder="Pincode" value="{{ old('pincode') }}" class="form-control">
+                      <input id="pincode" type="text" name="pincode" placeholder="Pincode" value="{{ old('pincode') }}" class="form-control">
                       <br>
                       <span style="color:red">{{ $errors->first('pincode') }}</span>
 
@@ -140,9 +140,9 @@
 
 
                         <div class="form-group col-md-6">
-                      <label for="lastname" class="form-label">City Name</label>
+                      <label for="city" class="form-label">City Name</label>
 
-                      <input id="lastname" type="text" name="city" placeholder="City Name" value="{{ old('city') }}" class="form-control">
+                      <input id="city" type="text" name="city" placeholder="City Name" value="{{ old('city') }}" class="form-control">
                       <br>
                        <span style="color:red">{{ $errors->first('city') }}</span>
 
@@ -209,6 +209,6 @@
         </div>
       </div>
     </section>
-    <?php  // form start here ?>
+    <?php  // form ends here ?>
 
 @endsection
