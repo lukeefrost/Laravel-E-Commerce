@@ -73,3 +73,5 @@ Route::get('/cart/remove/{id}', 'CartController@destroy');
 Route::put('/cart/update/{id}', 'CartController@update');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('/checkout', 'CheckoutController@index');
