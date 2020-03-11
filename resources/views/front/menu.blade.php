@@ -49,16 +49,23 @@
       <li class="nav-item">
         <a class="nav-link disabled" href="{{url('/contact')}}">Contact Us</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
     </ul>
-    <li class="list-inline-item"><a href="{{url('/login')}}">Login</a></li>
+    <ul>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
+      <?php if (Auth::check()) { ?>
+      <div class="dropdown-menu" aria-labelledby="dropdown01">
+        <a class="dropdown-item" href="#">{{Auth::user()->name}}</a>
+      <?php } ?>
+      <?php if (Auth::check()) { ?>
+        <a class="dropdown-item" href="{{url('/logout')}}">Logout</a>
+      <?php } else { ?>
+        <a class="dropdown-item" href="{{url('/login')}}">Login</a>
+      <?php } ?>
+      </div>
+    </li>
+  </ul>
+
     <li class="list-inline-item"><a href="{{url('/cart')}}"><i class="fa fa-shopping-cart">View Cart</i>({{Cart::count()}}) ({{Cart::total()}})</a></li>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
