@@ -20,6 +20,7 @@ class CreateAddressTable extends Migration
             $table->string('state');
             $table->string('city');
             $table->string('country');
+            $table->string('payment_type');
             $table->integer('user_id');
             $table->string('pincode');
             $table->timestamps();

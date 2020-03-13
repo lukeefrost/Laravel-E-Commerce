@@ -52,7 +52,7 @@
         @foreach($cats as $cat)
           <a class="dropdown-item" href="{{url('/')}}/products/{{$cat->name}}">{{ucwords($cat->name)}}</a>
         @endforeach
-      </li>
+        </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="{{url('/contact')}}">Contact Us</a>
       </li>
@@ -66,6 +66,7 @@
       <?php } ?>
       <?php if (Auth::check()) { ?>
         <a class="dropdown-item" href="{{url('/logout')}}">Logout</a>
+        <a class="dropdown-item" href="{{url('/')}}/profile">Profile</a>
       <?php } else { ?>
         <a class="dropdown-item" href="{{url('/login')}}">Login</a>
       <?php } ?>

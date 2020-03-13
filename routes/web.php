@@ -74,6 +74,10 @@ Route::put('/cart/update/{id}', 'CartController@update');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/checkout', 'CheckoutController@index');
-
-Route::post('/formvalidate', 'CheckoutController@formValidate');
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/checkout', 'CheckoutController@index');
+    Route::post('/formValidate', 'CheckoutController@formValidate');
+    Route::get('/thankyou', function() {
+        return view('/profile/thankyou');
+    });
+});

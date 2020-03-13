@@ -21,14 +21,14 @@
                     <thead>
                         <tr class="cart_menu">
                             <td class="image">Item</td>
-                            <td class="description"></td>
+                            <td class="description">Description</td>
                             <td class="price">Price</td>
                             <td class="quantity">Quantity</td>
                             <td class="total">Total</td>
                             <td></td>
                         </tr>
                     </thead>
-                    <?php $count =1;?>
+                    <?php $count = 1;?>
                     @foreach($cartItems as $cartItem)
 
 
@@ -42,7 +42,7 @@
 
                                 <a href="{{url('/product_details')}}/{{$cartItem->id}}"><img src="{{$cartItem->options->img}}" alt="" width="200px"></a>
                             </td>
-                           {!! Form::open(['url' => ['cart/update',$cartItem->rowId], 'method'=>'put']) !!}
+                           {!! Form::open(['url' => ['cart/update', $cartItem->rowId], 'method'=>'put']) !!}
                             <td class="cart_description">
                                 <h4><a href="{{url('/product_details')}}/{{$cartItem->id}}" style="color:blue">{{$cartItem->name}}</a></h4>
                                 <p>Product ID: {{$cartItem->id}}</p>

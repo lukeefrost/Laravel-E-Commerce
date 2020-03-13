@@ -13,7 +13,8 @@ class CheckoutController extends Controller
     {
         if (Auth::check())
         {
-          return view('front.checkout');
+          $cartItems = Cart::content();
+          return view('front.checkout', compact('cartItems'));
         }
         return rediect('home');
     }
@@ -47,6 +48,9 @@ class CheckoutController extends Controller
         $address->save();
 
         Orders::createOrder();
+
+        Cart::destroy();
+        return redirect('profile.thankyou');
 
     }
 }
