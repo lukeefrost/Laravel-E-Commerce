@@ -77,6 +77,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/checkout', 'CheckoutController@index');
     Route::post('/formValidate', 'CheckoutController@formValidate');
+    Route::get('/orders', 'ProfileController@orders');
     Route::get('/thankyou', function() {
         return view('/profile/thankyou');
     });
