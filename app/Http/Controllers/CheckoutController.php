@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Address;
+use App\Orders;
 
 class CheckoutController extends Controller
 {
@@ -44,6 +45,8 @@ class CheckoutController extends Controller
         $address->user_id = $userid;
 
         $address->save();
+
+        Orders::createOrder();
 
     }
 }
