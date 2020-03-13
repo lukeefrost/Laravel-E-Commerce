@@ -50,7 +50,7 @@ class CheckoutController extends Controller
         Orders::createOrder();
 
         Cart::destroy();
-        return redirect('profile.thankyou');
+        return redirect('thankyou');
 
     }
 }
