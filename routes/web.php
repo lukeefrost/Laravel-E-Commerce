@@ -78,7 +78,15 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/checkout', 'CheckoutController@index');
     Route::post('/formValidate', 'CheckoutController@formValidate');
     Route::get('/orders', 'ProfileController@orders');
-    Route::get('/address', 'ProfileController@address');
+    Route::post('/address', 'ProfileController@address');
+    Route::get('/updatePassword', 'ProfileController@updateAddress');
+    Route::get('/password', 'ProfileController@updatePassword');
+    Route::post('/updatePassword', 'ProfileController@updatePassword');
+
+    Route::get('/profile', function() {
+        return view('profile.index');
+    })
+
     Route::get('/thankyou', function() {
         return view('/profile/thankyou');
     });
