@@ -2,28 +2,72 @@
 
 @section('content')
 
-<div style="width:20rem">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<img src="{{url('images', '$products->image')}}" alt="Card image cap">
+<div class="container align-vertical hero">
+<div class="row">
+<div class="col-md-5 text-left">
 
-<div>
 
-<h4>Card Title</h4>
+</div>
+</div><!--end of row-->
+</div><!--end of container-->
+</header>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<section id="index-amazon">
 
-<a href="#">Read More</a>
+
+  <div class="amazon">
+<div class="container">
+
+<div class="row">
+<div class="col-md-12">
+<div class="product">
+<div class="row">
+<div class="col-md-6 col-xs-12">
+
+<div class="thumbnail">
+  <img src="{{url('images', $products->image)}}" class="card-img">
+  <br>
 </div>
 </div>
 
-<div class="product-information">
-  <img src="" alt="" />
+<div class="col-md-5 col-md-offset-1">
+  <div class="product-details">
+    <h2 class="product-title"><?php echo ucwords($products->product_name);?></h2>
 
-<div class="product-information">
-  <img src="" alt="" />
+    <button class="btn btn-primary btn-sm"><a href="{{url('/cart/addItem')}}/<?php echo $products->id; ?>" class="add-to-cart">Add To Cart<i class="fa fa-shopping-cart"></i></button>
 
-  <h2><?php echo ucwords($products->product_name);?></h2>
+    <p class="">
+      <i class="fa fa-shopping-cart"></i> Add To Cart
+    </p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
+<div class="no-padding-top section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="#" class="load-more"><i class="fa fa-ellipsis-h"</i></a>
+      </div>
+    </div>
+  </div>
 </div>
 
 
