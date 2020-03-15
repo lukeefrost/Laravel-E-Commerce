@@ -15,13 +15,14 @@ class ProductsController extends Controller
 
     public function create()
     {
-      return view('admin.product.create');
+      $categories = Category::pluck('name', 'id');
+      return view('admin.product.create', compact('categories'));
     }
 
     public function store(Request $request)
     {
       $formInput = $request->except('image');
-      
+
       $this->validate($request, [
         'product_name' => 'required',
         'product_code' => 'required',
@@ -38,6 +39,7 @@ class ProductsController extends Controller
         $formInput['image']=$imageName;
       }
 
+      $categories = Category::all();
       Product::create($formInput);
       return redirect()->back();
     }

@@ -95,6 +95,11 @@
       {{ Form::text('product_info', null, array('class' => 'form-control', 'required' => '')) }}
     </div>
 
+    <div class="form-gorup">
+      {{ Form::label('category_id', 'Categories') }}
+      {{ Form::select('category_id', $categories, null, ['class' => 'form-control', 'placeholder' => 'SelectCategory']) }}
+    </div>
+
     <div class="form-group">
       {{ Form::label('Image' 'image') }}
 
