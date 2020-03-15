@@ -31,9 +31,18 @@ class ProfileController extends Controller
         return view('profile.address', compact('$address_data'));
      }
 
-     public function updatePassword()
+     public function updatePassword(Request $request)
      {
-        return view('profile.updatePassword');
+        $oldPassword = $request->oldPassword;
+        $newPassword = $request->newPassword;
+
+        if(!Hash::check($oldPassword, Auth::user()->password))
+        {
+            return back()->with('msg', 'The specified password does not match the database password');
+        }else {
+          $request->user()->?fill(['password' => Hash::make($newPassword)])->save();
+          return back()->with('msg', 'Password has been updated');
+        }
      }
 
      public function password()
