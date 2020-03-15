@@ -62,6 +62,7 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth', 'admin']], function() 
     Route::get('/admin', 'AdminController@index');
 
     Route::resource('product', 'ProductsController');
+    Route::resource('category', 'CategoriesController');
 });
 
 Route::get('/cart/addItem/{id}', 'HomeController@product_details');
@@ -85,7 +86,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/profile', function() {
         return view('profile.index');
-    })
+    });
 
     Route::get('/thankyou', function() {
         return view('/profile/thankyou');
