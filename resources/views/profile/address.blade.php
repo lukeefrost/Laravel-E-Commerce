@@ -19,8 +19,11 @@
                 <li><a href="{{url('/profile')}}">Profile</a></li>
                 <li class="active">My Address</li>
             </ol>
-        </div><!--/breadcrums-->
-
+        </div><!--/breadcrumbs-->
+        @if(session('msg'))
+          <div class="alert alert-info">
+            {{session('msg')}}
+          </div>
         @endif
 
         <div class="row">
