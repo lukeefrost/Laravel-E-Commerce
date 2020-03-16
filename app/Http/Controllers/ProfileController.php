@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Address;
 use App\Orders;
 use App\Product;
@@ -40,8 +41,8 @@ class ProfileController extends Controller
         {
             return back()->with('msg', 'The specified password does not match the database password');
         }else {
-          $request->user()->?fill(['password' => Hash::make($newPassword)])->save();
-          return back()->with('msg', 'Password has been updated');
+          $request->user()->fill(['password' => Hash::make($newPassword)])->save();
+          return back()->with('mssg', 'Password has been updated');
         }
      }
 
@@ -63,6 +64,6 @@ class ProfileController extends Controller
         $userid = Auth::user()->id;
         DB::table('address')->where('user_id', $userid)->update($request->except('_token'));
 
-        return back()->with('msg' 'Your address has been updated');
+        return back()->with('msg', 'Your address has been updated');
      }
 }
