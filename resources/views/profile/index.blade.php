@@ -15,8 +15,8 @@
                 </nav>
                 </div>
               </ol>
-          </div><!--/breadcrums-->
-          </div><!--/breadcrums-->
+          </div><!--/breadcrumbs-->
+        </div><!--/breadcrumbs-->
        </div>
   </section>
 
@@ -39,8 +39,7 @@
                   <td>      <a href="{{url('/address')}}" class="btn btn-success">My Address</a></td>
                   <td>      <a href="{{url('/password')}}" class="btn btn-success">Change Password</a></td>
                   </tr>
-                  </table>
-                 *              
+                  </table>            
                 <h3><span style='color:green'>{{ucwords(Auth::user()->name)}}</span>, Welcome</h3>
             </ol>
      </div>

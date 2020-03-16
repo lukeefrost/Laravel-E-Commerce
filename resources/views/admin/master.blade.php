@@ -19,8 +19,12 @@
 
   <body>
     @include('admin.admin_header')
-
+    <div class="container-fluid">
+      <div class="row">
+    @include('admin.includes.sidenav')
     @yield('content')
+  </div>
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
