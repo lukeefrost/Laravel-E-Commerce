@@ -63,34 +63,34 @@
 
         <div class="panel-body">
 
-    {!! Form::open(['route' => 'product.store, 'method' => 'post', 'files' => true])!!}
+    {!! Form::open(['route' => 'product.store', 'method' => 'post', 'files' => true]) !!}
 
     <div class="form-group">
-      {{ Form::label('Product Name' 'Name') }}
+      {{ Form::label('Product Name', 'Name') }}
 
       {{ Form::text('product_name', null, array('class' => 'form-control', 'required' => '')) }}
     </div>
 
     <div class="form-group">
-      {{ Form::label('Code' 'Code') }}
+      {{ Form::label('Code', 'Code') }}
 
       {{ Form::text('product_code', null, array('class' => 'form-control', 'required' => '')) }}
     </div>
 
     <div class="form-group">
-      {{ Form::label('Code' 'Code') }}
+      {{ Form::label('Code', 'Code') }}
 
       {{ Form::text('product_code', null, array('class' => 'form-control', 'required' => '')) }}
     </div>
 
     <div class="form-group">
-      {{ Form::label('Price' 'Price') }}
+      {{ Form::label('Price', 'Price') }}
 
       {{ Form::text('product_price', null, array('class' => 'form-control', 'required' => '')) }}
     </div>
 
     <div class="form-group">
-      {{ Form::label('Description' 'Description') }}
+      {{ Form::label('Description', 'Description') }}
 
       {{ Form::text('product_info', null, array('class' => 'form-control', 'required' => '')) }}
     </div>
@@ -101,13 +101,13 @@
     </div>
 
     <div class="form-group">
-      {{ Form::label('Image' 'image') }}
+      {{ Form::label('Image', 'image') }}
 
       {{ Form::text('image', null, array('class' => 'form-control', 'required' => '')) }}
     </div>
 
     <div class="form-group">
-      {{ Form::label('Sale Price' 'Sale Price') }}
+      {{ Form::label('Sale Price', 'Sale Price') }}
 
       {{ Form::text('sale_price', null, array('class' => 'form-control', 'required' => '')) }}
     </div>
