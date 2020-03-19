@@ -78,12 +78,6 @@
     </div>
 
     <div class="form-group">
-      {{ Form::label('Code', 'Code') }}
-
-      {{ Form::text('product_code', null, array('class' => 'form-control', 'required' => '')) }}
-    </div>
-
-    <div class="form-group">
       {{ Form::label('Price', 'Price') }}
 
       {{ Form::text('product_price', null, array('class' => 'form-control', 'required' => '')) }}
@@ -95,15 +89,14 @@
       {{ Form::text('product_info', null, array('class' => 'form-control', 'required' => '')) }}
     </div>
 
-    <div class="form-gorup">
+    <div class="form-group">
       {{ Form::label('category_id', 'Categories') }}
-      {{ Form::select('category_id', $categories, null, ['class' => 'form-control', 'placeholder' => 'SelectCategory']) }}
+      {{ Form::select('category_id', $categories, null, ['class' => 'form-control', 'placeholder' => 'Select Category']) }}
     </div>
 
     <div class="form-group">
-      {{ Form::label('Image', 'image') }}
-
-      {{ Form::text('image', null, array('class' => 'form-control', 'required' => '')) }}
+      {{ Form::label('Image', 'Image') }}
+      {{ Form::file('image', null, array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
