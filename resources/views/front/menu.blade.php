@@ -32,7 +32,6 @@
 </header>
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
   <a href="{{'/'}}" class="navbar-brand"><img src="{{URL::asset('images/ecom.png')}}" alt="..."></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -40,7 +39,7 @@
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="{{url('/')}}">Home</a>
       </li>
       <li class="nav-item">
@@ -48,10 +47,12 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
         <?php  $cats = DB::table('categories')->get(); ?>
         @foreach($cats as $cat)
           <a class="dropdown-item" href="{{url('/')}}/products/{{$cat->name}}">{{ucwords($cat->name)}}</a>
         @endforeach
+      </div>
         </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="{{url('/contact')}}">Contact Us</a>

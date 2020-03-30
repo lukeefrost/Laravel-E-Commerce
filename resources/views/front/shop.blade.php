@@ -20,16 +20,16 @@
       <div class="row">
         @forelse($products as $product)
           <div class="card" style="width:30rem height: 20rem">
-            <img data-src="{{url('images', $product->image)}}" class="card-image" alt="Card image cap">
+            <img src="{{url('images', $product->image)}}" class="card-image">
             <div class="card-body">
 
             <p class="card-text">{{$product->product_name}}</p>
             <button class="btn btn-primary btn-sm">
-              <a href="{{url('/product_details')}}<?php echo $product->id; ?>" class="add-to-cart">View Product</a>
+              <a href="{{url('/product_details')}}<?php echo $product->id; ?>" class="add-to-cart addcart">View Product</a>
             </button>
 
             <button class="btn btn-primary btn-sm float-right">
-              <a href="{{url('/cart/addItem')}}<?php echo $product->id; ?>" class="add-to-cart">Add To Cart<i class="fa fa-shopping-cart"></i></a>
+              <a href="{{url('/cart/addItem')}}<?php echo $product->id; ?>" class="add-to-cart addcart">Add To Cart<i class="fa fa-shopping-cart"></i></a>
             </button>
         </div>
         </div>

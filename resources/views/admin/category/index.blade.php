@@ -59,10 +59,9 @@
       <td>No Data</td>
     </tr>
     @endforelse
-    @endif
 
   </tbody>
 </table>
-
+    @endif
 
 @endsection

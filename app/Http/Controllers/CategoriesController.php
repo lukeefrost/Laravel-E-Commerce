@@ -29,7 +29,7 @@ class CategoriesController extends Controller
     {
         $products = Category::find($id)->products;
         $categories = Category::all();
-        return view('admin.category.index', compact(['categories', 'products']));
+        return view('admin.category.index', compact(['categories','products']));
     }
 
     public function edit($id)
