@@ -44,6 +44,9 @@
 <div class="col-md-5 col-md-offset-1">
   <div class="product-details">
     <h2 class="product-title"><?php echo ucwords($products->product_name);?></h2>
+    <h5>{{$products->product_info}}</h5>
+    <h2>{{$products->sale_price}}</h2>
+    <p><b>Availability:</b>{{$products->stock}} In Stock</p>
 
     <button class="btn btn-primary btn-sm"><a href="{{url('/cart/addItem')}}/<?php echo $products->id; ?>" class="add-to-cart">Add To Cart<i class="fa fa-shopping-cart"></i></button>
 

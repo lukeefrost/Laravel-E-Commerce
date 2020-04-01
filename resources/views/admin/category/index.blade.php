@@ -27,7 +27,7 @@
   {!! Form::open(['route' => 'category.store', 'method' => 'post']) !!}
 
     <div class="form-group">
-      {{ Form::label('name', 'Title')}}
+      {{ Form::label('name', 'Title') }}
       {{ Form::text('name', null, array('class' => 'form-control')) }}
 
     </div>
@@ -38,30 +38,5 @@
 </div>
 </div>
 
-{{--products--}}
-@if(isset($products))
-
-<h3>Products</h3>
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Products</th>
-    </tr>
-  </thead>
-  <tbody>
-    @forelse($products as $product)
-      <tr>
-        <td>{{$product->name}}</td>
-      </tr>
-    @empty
-    <tr>
-      <td>No Data</td>
-    </tr>
-    @endforelse
-
-  </tbody>
-</table>
-    @endif
 
 @endsection
