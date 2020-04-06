@@ -51,6 +51,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('home', 'HomeController@contact')->name('contactus');
 
+Route::post('addToWishList', 'HomeController@wishlist')->name('addToWishList');
+
+Route::get('/WishList', 'HomeController@viewWishList');
+
 Route::group(['prefix' => 'admin', 'middleware'=>['auth', 'admin']], function() {
 
     Route::get('/', function () {

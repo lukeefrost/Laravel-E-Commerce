@@ -51,21 +51,21 @@
     <button class="btn btn-primary btn-sm"><a href="{{url('/cart/addItem')}}/<?php echo $products->id; ?>" class="add-to-cart">Add To Cart<i class="fa fa-shopping-cart"></i></button>
 
       <?php
-        $wishData = DB::table('wishList')->rightJoin('products', 'wishlist.pro_id', '=', 'products.id')->where('wishlist.pro_id', '=', $products->id)->get();
+        $wishData = DB::table('wishlist')->rightJoin('products', 'wishlist.pro_id', '=', 'products.id')->where('wishlist.pro_id', '=', $products->id)->get();
 
-        $count = App\WishList::where(['pro_id' => $products->id]->count());
+        $count = App\WishList::where(['pro_id' => $products->id])->count();
 
 
       ?>
 
-      <?php if($count => "0"){?>
+      <?php if($count == "0"){?>
         {!! Form::open(['route' => 'addToWishList', 'method' => 'post']) !!}
           <input type="hidden" value="{{$products->id}}" name="pro_id">
           <input type="submit" value="Add to WishList" class="btn btn-primary"/>
 
         {!! Form::close() !!}
       <?php } else{?>
-        <h3 style="color:green">Already Added to Wishlist</h3>
+        <h3 style="color:green">Already Added to Wishlist<a href="{{url('/WishList')}}">WishList</a></h3>
     <?php  } ?>
 
     <p class="">

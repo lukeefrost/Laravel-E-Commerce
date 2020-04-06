@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\WishList;
 
 class HomeController extends Controller
@@ -31,7 +32,7 @@ class HomeController extends Controller
 
     public function product_details($id)
     {
-        $products = Product::findOrFail($id);
+        $products = DB::table('products')->where('id', $id)->get();
         return view('front.product_details', compact('products'));
     }
 
