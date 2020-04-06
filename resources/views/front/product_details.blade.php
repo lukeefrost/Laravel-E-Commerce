@@ -65,7 +65,7 @@
 
         {!! Form::close() !!}
       <?php } else{?>
-        <h3 style="color:green">Already Added to Wishlist<a href="{{url('/WishList')}}">WishList</a></h3>
+        <h3 style="color:green">Already Added to Wishlist<a href="{{url('/wishList')}}">Wish List</a></h3>
     <?php  } ?>
 
     <p class="">

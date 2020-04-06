@@ -48,6 +48,12 @@ class HomeController extends Controller
         return view('front.product_details', compact('products'));
     }
 
+    public function viewWishList()
+    {
+        $Products = DB::table('wishlist')->leftJoin('products', 'wishlist.pro_id', '=', 'products.id')->get();
+        return view('front.wishList', compact('Products'));
+    }
+
     public function contact()
     {
         return view('front.contact');
