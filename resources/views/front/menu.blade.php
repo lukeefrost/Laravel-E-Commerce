@@ -55,7 +55,10 @@
       </div>
         </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="{{url('/contact')}}">Contact Us</a>
+        <a class="nav-link" href="{{url('/contact')}}">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url('/wishList')}}"><i class="fa fa fa-star"></i>Wish List <span style="color:green; font-weight:bold">({{App\WishList::count()}})</span></a>
       </li>
     </ul>
     <ul>
