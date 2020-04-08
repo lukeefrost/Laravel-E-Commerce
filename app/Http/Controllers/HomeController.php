@@ -7,6 +7,7 @@ use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\WishList;
+use App\Recommends;
 
 class HomeController extends Controller
 {
@@ -38,7 +39,7 @@ class HomeController extends Controller
           $recommends->pro_id = $id;
           $recommends->save();
         }
-        
+
         $products = DB::table('products')->where('id', $id)->get();
         return view('front.product_details', compact('products'));
     }

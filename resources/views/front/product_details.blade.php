@@ -91,5 +91,7 @@
   </div>
 </div>
 
+@include('front.recommends')
+
 
 @endsection

@@ -78,4 +78,6 @@
   </div>
 </section>
 
+@include('front.recommends')
+
 @endsection
