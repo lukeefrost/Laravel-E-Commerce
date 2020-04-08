@@ -32,6 +32,13 @@ class HomeController extends Controller
 
     public function product_details($id)
     {
+        if(Auth::check()){
+          $recommends = new Recommends;
+          $recommends->uid = Auth::user()->id;
+          $recommends->pro_id = $id;
+          $recommends->save();
+        }
+        
         $products = DB::table('products')->where('id', $id)->get();
         return view('front.product_details', compact('products'));
     }
