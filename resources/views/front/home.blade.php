@@ -1,9 +1,6 @@
 @extends('front.master')
 
 @section('content')
-<br>
-<br>
-<br>
 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
      <ol class="carousel-indicators">
@@ -62,7 +59,7 @@
         @forelse($cats as $product)
       <div class="card" style="width:30rem height: 20rem">
          <img src="{{url('images',$product->image)}}" class="card-img-top">
-         <p class="card-text">${{$product->pro_price}}</p>
+         <p class="card-text">${{$product->product_price}}</p>
         <button class="btn btn-primary btn-sm">
          <a href="{{url('/product_details')}}/<?php echo $product->id; ?>" class="">View Product</a>
        </button>

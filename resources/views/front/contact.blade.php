@@ -6,7 +6,7 @@
       <!-- Breadcrumb -->
       <div class="container">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item text-uppercase"> <a href="index.html" class="text-primary">Home</a></li>
+          <li class="breadcrumb-item text-uppercase"> <a href="{{url('/home')}}" class="text-primary">Home</a></li>
           <li class="breadcrumb-item active text-uppercase">Contact</li>
         </ol>
       </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Address;
 use App\Orders;
+use Cart;
 
 class CheckoutController extends Controller
 {
@@ -16,12 +17,11 @@ class CheckoutController extends Controller
           $cartItems = Cart::content();
           return view('front.checkout', compact('cartItems'));
         }
-        return rediect('home');
-    }
 
-    else {
-      return redirect('login');
-    }
+      else {
+        return redirect('login');
+      }
+   }
 
     public function formValidate(Request $request)
     {

@@ -28,7 +28,7 @@ Route::get('/contact', function() {
 });
 
 Route::get('/products', function() {
-    return view('front.shop');
+    return view('front/shop');
 });
 
 Route::get('/product_details/{id}', 'HomeController@product_details');
@@ -48,8 +48,6 @@ Route::get('/shop', 'HomeController@shop');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('home', 'HomeController@contact')->name('contactus');
 
 Route::post('addToWishList', 'HomeController@wishlist')->name('addToWishList');
 
