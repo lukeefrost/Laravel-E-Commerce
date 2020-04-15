@@ -1,6 +1,6 @@
 @extends('front.master')
 @section('content')
-
+<br>
  <section class="hero hero-page gray-bg padding-small">
       <div class="container">
         <div class="row d-flex">

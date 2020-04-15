@@ -41,8 +41,10 @@ class HomeController extends Controller
           $recommends->save();
         }
 
-        $products = DB::table('products')->where('id', $id)->get();
+        $products = Product::findOrFail($id);
         return view('front.product_details', compact('products'));
+        //$products = DB::table('products')->where('id', $id)->get();
+        //return view('front.product_details', compact('products'));
     }
 
     public function wishList(Request $request)

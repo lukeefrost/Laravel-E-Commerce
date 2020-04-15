@@ -6,7 +6,8 @@
 <style>
   table td { padding:10px
   }</style>
-
+<br>
+<br>
 <section id="cart_items">
   <div class="container">
     <div class="col=md-12">
@@ -35,11 +36,11 @@
 
 
                   <tr>
-                  <td>      <a href="{{url('/')}}/orders" class="btn btn-success">My Orders</a></td>
-                  <td>      <a href="{{url('/address')}}" class="btn btn-success">My Address</a></td>
-                  <td>      <a href="{{url('/password')}}" class="btn btn-success">Change Password</a></td>
+                  <td><a href="{{url('/')}}/orders" class="btn btn-success">My Orders</a></td>
+                  <td><a href="{{url('/address')}}" class="btn btn-success">My Address</a></td>
+                  <td><a href="{{url('/password')}}" class="btn btn-success">Change Password</a></td>
                   </tr>
-                  </table>            
+                  </table>
                 <h3><span style='color:green'>{{ucwords(Auth::user()->name)}}</span>, Welcome</h3>
             </ol>
      </div>

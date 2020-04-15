@@ -1,7 +1,9 @@
 @extends('front.master')
 
 @section('content')
-
+<br>
+<br>
+<br>
 <div class="contact-page">
       <!-- Breadcrumb -->
       <div class="container">
@@ -65,24 +67,24 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label for="name">Your firstname *</label>
-                        <input type="text" name="name" id="name" placeholder="Enter your firstname" required="required" class="form-control">
+                        <label for="name">Your First Name *</label>
+                        <input type="text" name="name" id="name" placeholder="Enter your First Name" required="required" class="form-control">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label for="surname">Your lastname *</label>
-                        <input type="text" name="surname" id="surname" placeholder="Enter your  lastname" required="required" class="form-control">
+                        <label for="surname">Your Last Name *</label>
+                        <input type="text" name="surname" id="surname" placeholder="Enter your lLast Name" required="required" class="form-control">
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="email">Your email *</label>
-                    <input type="email" name="email" id="email" placeholder="Enter your  email" required="required" class="form-control">
+                    <label for="email">Your Email *</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your Email" required="required" class="form-control">
                   </div>
                   <div class="form-group">
-                    <label for="message">Your message for us *</label>
-                    <textarea rows="4" name="message" id="message" placeholder="Enter your message" required="required" class="form-control"></textarea>
+                    <label for="message">Your Message *</label>
+                    <textarea rows="4" name="message" id="message" placeholder="Enter your Message" required="required" class="form-control"></textarea>
                   </div>
                   <input type="submit" value="Send message" class="btn btn-primary">
                 </div>
@@ -105,6 +107,7 @@
         </div>
       </section>
     </div>
+    <br>
     <!-- Search Panel-->
     <div class="search-overlay">
       <div class="search-inner d-flex justify-content-center align-items-center">

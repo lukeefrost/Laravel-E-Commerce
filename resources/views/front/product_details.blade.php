@@ -26,7 +26,7 @@
 <section id="index-amazon">
 
 
-  <div class="amazon">
+<div class="amazon">
 <div class="container">
 
 <div class="row">
@@ -34,6 +34,7 @@
 <div class="product">
 <div class="row">
 <div class="col-md-6 col-xs-12">
+
 
 <div class="thumbnail">
   <img src="{{url('images', $products->image)}}" class="card-img">
