@@ -67,6 +67,14 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth', 'admin']], function() 
 
     Route::resource('product', 'ProductsController');
     Route::resource('category', 'CategoriesController');
+
+    Route::get('ProductEditForm/{id}', 'ProductsController@ProductEditForm')->name('ProductEditForm');
+
+    Route::get('editProducts/{id}', 'ProductsController@editProducts')->name('editProducts');
+
+    Route::get('EditImage/{id}', 'ProductsController@ImageEditForm')->name('ImageEditForm');
+
+    Route::post('editProductImage', 'ProductsController@editProductImage')->name('editProductImage');
 });
 
 Route::get('/cart/addItem/{id}', 'HomeController@product_details');

@@ -44,6 +44,7 @@ class CategoriesController extends Controller
 
     public function destroy($id)
     {
-
+        Category::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }
