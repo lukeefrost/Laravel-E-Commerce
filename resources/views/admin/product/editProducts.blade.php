@@ -14,22 +14,6 @@
   <ul>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="row">
 
 
@@ -45,12 +29,6 @@
         <br>
 
         {!! Form::model($products, ['method'=>'post', 'action'=> ['ProductsController@editProducts', $products->id], 'files'=>true]) !!}
-
-
-
-
-
-
 
         <Select class="form-control" name="cat_id">
           @foreach($categories as $cat)
@@ -116,6 +94,10 @@
       </div>
 
       <div class="col-md-3">
+        <div align="center">
+          <a href="{{route('addProperty', $products->id)}}" class="btn btn-sm btn-info" style="margin:5px">Add Property</a>
+        <br>
+        </div>
 
                 <h1>Change Image</h1>
                 <img class="card-img-top img-fluid" src="{{url('images',$products->image)}}" style="width:200px" alt="Card image cap">

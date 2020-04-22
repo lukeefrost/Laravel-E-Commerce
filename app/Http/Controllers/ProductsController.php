@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
+use App\Product_Properties;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -110,6 +111,24 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         Product::findOrFail($id)->delete();
+        return redirect()->back();
+    }
+
+    public function addProperty($id)
+    {
+        $products = Product::findOrFail($id);
+        return view('admin.product.addProperty', compact('products'));
+    }
+
+    public function submitProperty(Request $request)
+    {
+        $properties = new Product_Properties;
+        $properties->pro_id = $request->pro_id;
+        $properties->size = $request->size;
+        $properties->color = $request->color;
+        $properties->p_price = $request->p_price;
+        $properties->save();
+
         return redirect()->back();
     }
 

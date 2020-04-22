@@ -75,6 +75,10 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth', 'admin']], function() 
     Route::get('EditImage/{id}', 'ProductsController@ImageEditForm')->name('ImageEditForm');
 
     Route::post('editProductImage', 'ProductsController@editProductImage')->name('editProductImage');
+
+    Route::get('/addProperty/{id}', 'ProductsController@addProperty')->name('addProperty');
+
+    Route::post('submitProperty', 'ProductsController@submitProperty')->name('submitProperty');
 });
 
 Route::get('/cart/addItem/{id}', 'HomeController@product_details');
