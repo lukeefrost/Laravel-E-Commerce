@@ -35,18 +35,25 @@ class CartController extends Controller
     {
         $qty = $request->qty;
         $proId = $request->proId;
-        $products = Product::find($proId);
-        $stock = $products->stock;
-        return back();
+        $rowId = $request->rowId;
 
-        if($qty<$stock) {
-          $message = "Cart is updated";
-          Cart::update($id, $request->qty);
-          return back()->with('status', $msg);
-        } else {
-          $msg = "Please check your quantity is more than product stock";
-          return back()->with('error', $msg);
-        }
+        Cart::update($rowId, $qty);
+        $cartItems = Cart::content();
+        return view('cart.upCart', compact('cartItems'))->with('status', 'Cart Updated');
+
+
+        //$products = Product::find($proId);
+        //$stock = $products->stock;
+        //return back();
+
+        //if($qty < $stock) {
+          //$message = "Cart is updated";
+          //Cart::update($id, $request->qty);
+          //return back()->with('status', $msg);
+        //} else {
+          //$msg = "Please check your quantity is more than product stock";
+          //return back()->with('error', $msg);
+        //}
     }
 
 

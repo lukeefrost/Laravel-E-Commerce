@@ -19,7 +19,7 @@ $(document).ready(function(){
       var proId = $('#proId<?php echo $i;?>').val();
 
 
-      if(newqty <=0){ alert('enter only valid quantity') }
+      if(newqty <=0){ alert('Enter only Valid Quantity') }
 
 
       else {
@@ -38,7 +38,7 @@ $(document).ready(function(){
           }
         });
 
-        // End of Aajx
+        // End of Ajax
       }
     });
     <?php } ?>
@@ -188,7 +188,7 @@ $(document).ready(function(){
             </table>
 
           </div>
-          <!-- End of Updatediv</div> --></div>
+          <!-- End of Update Div</div> --></div>
 
 
         </div>

@@ -55,6 +55,8 @@ Route::get('/wishList', 'HomeController@viewWishList');
 
 Route::get('/removeWishList/{id}', 'HomeController@removeWishList');
 
+Route::get('/cart/update/{id}', 'CartController@update');
+
 Route::group(['prefix' => 'admin', 'middleware'=>['auth', 'admin']], function() {
 
     Route::get('/', function () {
