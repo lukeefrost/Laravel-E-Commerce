@@ -76,4 +76,20 @@ class HomeController extends Controller
         return view('front.contact');
     }
 
+    public function selectSize(Request $request)
+    {
+        $proDum = $request->proDum;
+        $size = $request->size;
+
+        $s_price = DB::table('products_properties')->where('pro_id', $proDum)->where('size', $size)->get();
+
+        foreach ($s_price as $sPrice) {
+          echo "US $ " .$sPrice->product_price;?>
+          <input type="hidden" value="<?php echo $sPrice->product_price;?>" name="newPrice"/>";
+
+          <div style="background:<?php echo $sPrice->color;?>:width: 40px; height: 40px"></div>
+          <?php
+        }
+    }
+
 }
