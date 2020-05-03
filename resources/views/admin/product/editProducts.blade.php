@@ -94,6 +94,48 @@
       </div>
 
       <div class="col-md-3">
+        <div class="content-box-large">
+          <?php {?>
+            $products = DB::table('products_properties')->where('pro_id', $proId)->get();
+            if(count($products) == 0)
+            {
+
+            } else {
+              ?> <div class="panel-heading">
+                <div class="panel-title">
+                  Update Properties
+                  <a href="" class="btn btn-info pull-right" style="margin:-6px; color:#fff">Add More</a>
+
+                </div>
+              </div>
+            }
+
+          <table class="table table-responsive">
+            <tr>
+              <td>Size</td>
+              <td>Color</td>
+              <td>Price</td>
+              <td>Update</td>
+            </tr>
+
+            @foreach($prots as $prod)
+
+            {{!! Form::open(['url' => 'admin/editProperty', 'method' => 'post']) !!}}
+            <tr>
+              <input type="hidden" name="pro_id" value="{{$prod->pro_id}}" size="6"/> <!-- products_properties pro_id -->
+              <input type="hidden" name="id" value="{{$prod->id}}" size="6"/> <!--// products_properties id -->
+              <td><input type="text" name="size" value="{{$prod->size}}" size="6"/></td>
+              <td><input type="text" name="color" value="{{$prod->color}}" size="15"/></td>
+              <td><input type="text" name="p_price" value="{{$prod->p_price}}" size="6"/></td>
+              <td colspan="3" align="right"><input type="submit" class="btn btn-success"
+              value="Save" style="margin:-6px; color:#fff"></td>
+            </tr>
+            {{!! Form::close() !!}}
+            @endforeach
+          </table>
+        </div>
+      <?php } ?>
+
         <div align="center">
           <a href="{{route('addProperty', $products->id)}}" class="btn btn-sm btn-info" style="margin:5px">Add Property</a>
         <br>
