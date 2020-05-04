@@ -70,8 +70,20 @@
     <h5>{{$products->product_info}}</h5>
 
     <form action="{{url('/cart/addItem')}}/<?php echo $products->id; ?>">
+      @if($product->sale_price == 0)
     <span id="price">{{$products->product_price}}</span>
     <input type="hidden" value="<?php echo $products->product_price;?>" name="newPrice"/>
+
+    @else
+<div class="d-flex justify-content-between align-items-center">
+
+        <input type="hidden" value="<?php echo $product->sale_price;?>" name="newPrice"/>
+          <p class="" style="text-decoration:line-through; color:#333">${{$product->sale_price}}</p>
+           <img src="{{URL::asset('dist/images/shop/sale.png')}}" alt="..."  style="width:60px">
+           <p class="">${{$product->product_price}}</p>
+
+         </div>
+@endif
 
     <h2>{{$products->sale_price}}</h2>
     <p><b>Availability:</b>{{$products->stock}} In Stock</p>
@@ -84,6 +96,11 @@
 
       @endforeach
     </select>
+
+    @if($product->new_arrival == 1)
+    <img src="{{URL::asset('dist/images/product-details/new.jpg')}}" alt="...">
+
+    @endif
 
     <button class="btn btn-primary btn-sm"><a href="{{url('/cart/addItem')}}/<?php echo $products->id; ?>" class="add-to-cart">Add To Cart<i class="fa fa-shopping-cart"></i></button>
 

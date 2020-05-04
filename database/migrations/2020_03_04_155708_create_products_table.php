@@ -22,7 +22,8 @@ class CreateProductsTable extends Migration
             $table->string('stock');
             $table->integer('category_id');
             $table->string('image')->nullable();
-            $table->string('sale_price');
+            $table->string('sale_price')->nullable();
+            $table->tinyInteger('new_arrival')->defauly('0')->nullable();
             $table->timestamps();
         });
     }

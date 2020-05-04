@@ -85,6 +85,8 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth', 'admin']], function() 
     Route::post('submitProperty', 'ProductsController@submitProperty')->name('submitProperty');
 
     Route::post('editProperty', 'ProductsController@editProperty');
+
+    Route::get('addSale', 'ProductsController@addSale');
 });
 
 Route::get('/cart/addItem/{id}', 'HomeController@product_details');
@@ -96,6 +98,8 @@ Route::get('/cart/remove/{id}', 'CartController@destroy');
 Route::put('/cart/update/{id}', 'CartController@update');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('/newArrival', 'HomeController@newArrival');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/checkout', 'CheckoutController@index');

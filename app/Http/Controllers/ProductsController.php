@@ -74,13 +74,21 @@ class ProductsController extends Controller
       $product_info = $request->product_info;
       $sales_price = $request->sale_price;
 
+      if($request->new_arrival == "NULL")
+      {
+        $new_arrival = '1';
+      } else {
+        $new_arrival = $request->new_arrival;
+      }
+
       DB::table('products')->where('id', $product_id)->update([
         'product_name' => $product_name,
         'category_id' => $category_id,
         'product_code' => $product_code,
         'product_price' => $product_price,
         'product_info' => $product_info,
-        'sale_price' => $sales_price
+        'sale_price' => $sales_price,
+        'new_arrival' => $new_arrival
       ]);
 
       return view('admin.product.index', compact('products', 'category'));
@@ -131,6 +139,14 @@ class ProductsController extends Controller
         $properties->save();
 
         return redirect()->back();
+    }
+
+    public function addSale(Request $request)
+    {
+        $salePrice = $request->salePrice;
+        $pro_id = $request->pro_id;
+        DB::table('products')->where('id', $pro_id)->update(['sale_price' => $salePrice]);
+        echo "Added Sucessfully";
     }
 
 }
