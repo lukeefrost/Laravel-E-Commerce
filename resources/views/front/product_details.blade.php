@@ -131,6 +131,73 @@
     </p>
   </div>
 </div>
+
+<!-- Start Review -->
+<div class="category-tab shop-details-tab"><!--category-tab-->
+          <div class="col-sm-12">
+
+
+            <?php $reviews = DB::table('reviews')->get();
+                      $count_reviews = count($reviews);?>
+
+            <ul class="nav nav-tabs">
+              <li><a href="#details" data-toggle="tab">Details</a></li>
+              <li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
+              <li><a href="#tag" data-toggle="tab">Tag</a></li>
+              <li class="active"><a href="#reviews" data-toggle="tab">Reviews ({{$count_reviews}})</a></li>
+            </ul>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane fade" id="details" >
+                {{$product->product_info}}
+            </div>
+
+            <div class="tab-pane fade" id="companyprofile" >
+
+            </div>
+
+            <div class="tab-pane fade active in" id="reviews" >
+              <div class="col-sm-12">
+
+             <?php $reviews = DB::table('reviews')->get(); ?>
+
+
+               @foreach($reviews as $review)
+                <ul>
+                  <li><a href=""><i class="fa fa-user"></i>{{$review->person_name}}</a></li>
+                  <li><a href=""><i class="fa fa-clock-o"></i>{{date('H: i', strtotime($review->created_at))}}</a></li>
+                  <li><a href=""><i class="fa fa-calendar-o"></i>{{date('F j, Y', strtotime($review->created_at))}}</a></li>
+                </ul>
+
+                <p>{{$review->review_content}}</p>
+
+
+
+                @endforeach
+                <p><b>Write Your Review</b></p>
+
+                <form action="{{url('/addReview')}}" method="post">
+
+                {{ csrf_field() }}
+                     <span>
+                        <input type="text" name="person_name" placeholder="Your Name"/>
+                        <input type="email", name="person_email" placeholder="Email Address"/>
+                    </span>
+                    <textarea name="review_content" ></textarea>
+                    <b>Rating: </b> <img src="images/product-details/rating.png" alt="" />
+                    <button type="submit" class="btn btn-default pull-right">
+                        Submit
+                    </button>
+                 </form>
+              </div>
+            </div>
+
+          </div>
+        </div><!--/category-tab-->
+
+<!-- End of Review -->
+
+@endforeach
 </div>
 </div>
 </div>

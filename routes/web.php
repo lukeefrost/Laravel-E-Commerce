@@ -118,3 +118,5 @@ Route::group(['middleware' => 'auth'], function() {
         return view('/profile/thankyou');
     });
 });
+
+Route::post('addReview', 'HomeController@addReview');

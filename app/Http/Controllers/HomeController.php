@@ -98,4 +98,10 @@ class HomeController extends Controller
         return view('front.shop', compact('products'));
     }
 
+    public function addReview(Request $request)
+    {
+        DB::table('reviews')->insert(['person_name', => $request->person_name, 'person_email' => $request->person_email, 'review_content' => $request->review_content, 'created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")]);
+        return back();
+    }
+
 }
