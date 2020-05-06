@@ -104,4 +104,16 @@ class HomeController extends Controller
         return back();
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->site_search;
+        if($search == '')
+        {
+            return view('front.shop');
+        } else {
+            $products = DB::table('products')->where('product_name', 'like', '%' . $search . '%')->paginate(2);
+            return view('front.shop', ['msg' => 'Results: '. $search], compact('products'));
+        }
+    }
+
 }

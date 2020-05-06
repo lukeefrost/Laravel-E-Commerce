@@ -120,3 +120,5 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 Route::post('addReview', 'HomeController@addReview');
+
+Route::post('/search', 'HomeController@search');

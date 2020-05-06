@@ -17,6 +17,15 @@
   <div class="album text-muted">
     <div class="container">
 
+      <h3 class="text-center">
+        <?php if(isset($msg)) {
+          echo $msg
+        } else { ?>
+          Featured Item <?php
+        }?>
+
+      </h3>
+
       <div class="row">
         @forelse($products as $product)
           <div class="card" style="width:30rem height: 20rem">
@@ -25,7 +34,7 @@
 
             <p id="price">
 
-            <p class="card-text">{{$product->product_name}}</p>
+            <p class="card-text iphone">{{$product->product_name}}</p>
             <button class="btn btn-primary btn-sm">
               <a href="{{url('/product_details')}}<?php echo $product->id; ?>" class="add-to-cart addcart">View Product</a>
             </button>
