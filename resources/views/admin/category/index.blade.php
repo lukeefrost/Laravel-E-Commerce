@@ -23,14 +23,7 @@
 <br>
     <div class="col-md-6">
         <br>
-<br>
-<br>
-<br>
 
-<br>
-<br>
-<br>
-<br>
 <h3>Categories</h3>
 
 <table class="table table-dark">
@@ -67,7 +60,7 @@
             {!! Form::open(['method'=>'DELETE', 'action'=> ['CategoriesController@destroy', $category->id]]) !!}
 
 
-                <td>  {!! Form::submit('Delete Category', ['class'=>'btn btn-danger col-sm-6']) !!}</td>
+                <td>  {!! Form::submit('Delete Category', ['class'=>'btn btn-danger col-sm-12']) !!}</td>
 
 
 
@@ -87,14 +80,7 @@
       <div class="col-md-4">
 
         <br>
-<br>
-<br>
-<br>
 
-<br>
-<br>
-<br>
-<br>
            <div class="card card-body bg-success text-white py-5">
        <h2>Create Category</h2>
        <p class="lead">Lorem Ipsum has been the industry's standard dummy text ever since the</p>

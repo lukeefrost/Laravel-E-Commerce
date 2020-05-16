@@ -11,9 +11,8 @@
     <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
 
         <h1>Dashboard</h1>
-         <div class="col-md-6">
-            <h1>BMW</h1>
-        <h1>Add New </h1>
+
+        <h1>Add New Product</h1>
 
         <div class="panel-body">
 

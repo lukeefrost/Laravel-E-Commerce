@@ -3,7 +3,7 @@
 @section('content')
 
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
-          <h1>Dashboard</h1>
+          <h1>Admin</h1>
 
           <section class="row text-center placeholders">
             <div class="col-6 col-sm-3 placeholder">

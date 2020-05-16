@@ -17,14 +17,6 @@
   <div class="album text-muted">
     <div class="container">
 
-      <h3 class="text-center">
-        <?php if(isset($msg)) {
-          echo $msg
-        } else { ?>
-          Featured Item <?php
-        }?>
-
-      </h3>
 
       <div class="row">
         @forelse($products as $product)

@@ -61,7 +61,7 @@ class ProductsController extends Controller
       $categories = Category::all();
       $prots = Product_Properties::all();
 
-      return view('admin.product.editProducts', compact('products', 'categories' 'prots'));
+      return view('admin.product.editProducts', compact('products', 'categories', 'prots'));
     }
 
     public function editProducts(Request $request, $id)
